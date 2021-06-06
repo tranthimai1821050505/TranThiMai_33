@@ -16,12 +16,14 @@ namespace TranThiMai_33.Controllers
         private LTQLDb db = new LTQLDb();
 
         // GET: LopHocs
+        [Authorize]
         public async Task<ActionResult> Index()
         {
             return View(await db.LopHocs.ToListAsync());
         }
 
         // GET: LopHocs/Details/5
+        [Authorize]
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
@@ -37,6 +39,7 @@ namespace TranThiMai_33.Controllers
         }
 
         // GET: LopHocs/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -60,6 +63,7 @@ namespace TranThiMai_33.Controllers
         }
 
         // GET: LopHocs/Edit/5
+        [Authorize]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -79,6 +83,7 @@ namespace TranThiMai_33.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+       [Authorize]
         public async Task<ActionResult> Edit([Bind(Include = "MaLop,TenLop")] LopHoc lopHoc)
         {
             if (ModelState.IsValid)
@@ -91,6 +96,7 @@ namespace TranThiMai_33.Controllers
         }
 
         // GET: LopHocs/Delete/5
+        [Authorize]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -108,6 +114,7 @@ namespace TranThiMai_33.Controllers
         // POST: LopHocs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
             LopHoc lopHoc = await db.LopHocs.FindAsync(id);

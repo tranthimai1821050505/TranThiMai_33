@@ -20,12 +20,14 @@ namespace TranThiMai_33.Controllers
         private LTQLDb db = new LTQLDb();
 
         // GET: SinhViens
+        [Authorize]
         public async Task<ActionResult> Index()
         {
             return View(await db.SinhViens.ToListAsync());
         }
 
         // GET: SinhViens/Details/5
+      //  [Authorize]
         public async Task<ActionResult> Details(string id)
         {
             if (id == null)
@@ -41,6 +43,7 @@ namespace TranThiMai_33.Controllers
         }
 
         // GET: SinhViens/Create
+      //  [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -51,6 +54,7 @@ namespace TranThiMai_33.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+     //   [Authorize]
         public async Task<ActionResult> Create([Bind(Include = "MaSinhVien,HoTen,MaLop")] SinhVien sinhVien)
         {
             if (ModelState.IsValid)
@@ -64,6 +68,7 @@ namespace TranThiMai_33.Controllers
         }
 
         // GET: SinhViens/Edit/5
+    //    [Authorize]
         public async Task<ActionResult> Edit(string id)
         {
             if (id == null)
@@ -83,6 +88,7 @@ namespace TranThiMai_33.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+     //   [Authorize]
         public async Task<ActionResult> Edit([Bind(Include = "MaSinhVien,HoTen,MaLop")] SinhVien sinhVien)
         {
             if (ModelState.IsValid)
@@ -95,6 +101,7 @@ namespace TranThiMai_33.Controllers
         }
 
         // GET: SinhViens/Delete/5
+   //     [Authorize]
         public async Task<ActionResult> Delete(string id)
         {
             if (id == null)
@@ -112,6 +119,7 @@ namespace TranThiMai_33.Controllers
         // POST: SinhViens/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+    //    [Authorize]
         public async Task<ActionResult> DeleteConfirmed(string id)
         {
             SinhVien sinhVien = await db.SinhViens.FindAsync(id);
@@ -122,7 +130,7 @@ namespace TranThiMai_33.Controllers
 
         //upload file excel controller
         [HttpPost]
-        [Authorize]
+    //    [Authorize]
         public ActionResult UploadFile(HttpPostedFileBase file)
         {
             //dat ten cho file
