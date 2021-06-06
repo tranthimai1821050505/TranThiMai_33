@@ -148,7 +148,7 @@ namespace TranThiMai_33.Controllers
                 SinhVien sv = new SinhVien();
                 sv.MaSinhVien = dt.Rows[i][0].ToString();
                 sv.HoTen = dt.Rows[i][1].ToString();
-              //  sv.MaLop = dt.Rows[i][2].ToString();
+               // sv.MaLop = dt.Rows[i][2].ToInt32();
                 db.SinhViens.Add(sv);
                 db.SaveChanges();
             }
