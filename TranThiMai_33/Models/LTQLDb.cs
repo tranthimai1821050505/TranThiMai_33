@@ -18,10 +18,22 @@ namespace TranThiMai_33.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-           
-            //modelBuilder.Entity<sysutility_ucp_computers_stub>()
-            //    .Property(e => e.l3_cache_size)
-            //    .HasPrecision(10, 0);
+
+            //modelBuilder.Entity<LopHoc>()
+            //   .Property(e => e.MaLop)
+            //   .IsUnicode(false);
+            modelBuilder.Entity<LopHoc>()
+               .Property(e => e.TenLop)
+               .IsUnicode(false);
+            modelBuilder.Entity<SinhVien>()
+               .Property(e => e.MaSinhVien)
+               .IsUnicode(false);
+            modelBuilder.Entity<SinhVien>()
+               .Property(e => e.HoTen)
+               .IsUnicode(false);
+            //modelBuilder.Entity<SinhVien>()
+            //   .Property(e => e.MaLop)
+            //   .IsUnicode(false);
         }
     }
 }

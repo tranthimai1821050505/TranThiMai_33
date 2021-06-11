@@ -50,6 +50,7 @@ namespace TranThiMai_33.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<ActionResult> Create([Bind(Include = "MaLop,TenLop")] LopHoc lopHoc)
         {
             if (ModelState.IsValid)
@@ -83,7 +84,7 @@ namespace TranThiMai_33.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-       [Authorize]
+        [Authorize]
         public async Task<ActionResult> Edit([Bind(Include = "MaLop,TenLop")] LopHoc lopHoc)
         {
             if (ModelState.IsValid)

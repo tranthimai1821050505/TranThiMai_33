@@ -135,13 +135,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106060819028_Create_Table_LopHoc.cs" />
-    <Compile Include="Migrations\202106060819028_Create_Table_LopHoc.Designer.cs">
-      <DependentUpon>202106060819028_Create_Table_LopHoc.cs</DependentUpon>
+    <Compile Include="Migrations\202106110201127_Create_Table_LopHoc.cs" />
+    <Compile Include="Migrations\202106110201127_Create_Table_LopHoc.Designer.cs">
+      <DependentUpon>202106110201127_Create_Table_LopHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106060819409_Create_Table_SinhVien.cs" />
-    <Compile Include="Migrations\202106060819409_Create_Table_SinhVien.Designer.cs">
-      <DependentUpon>202106060819409_Create_Table_SinhVien.cs</DependentUpon>
+    <Compile Include="Migrations\202106110201574_Create_Table_SinhVien.cs" />
+    <Compile Include="Migrations\202106110201574_Create_Table_SinhVien.Designer.cs">
+      <DependentUpon>202106110201574_Create_Table_SinhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CheckAccount.cs" />
@@ -535,17 +535,17 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\LopHocs\Create.cshtml" />
-    <Content Include="Views\LopHocs\Delete.cshtml" />
-    <Content Include="Views\LopHocs\Details.cshtml" />
-    <Content Include="Views\LopHocs\Edit.cshtml" />
-    <Content Include="Views\LopHocs\Index.cshtml" />
     <Content Include="Views\SinhViens\Create.cshtml" />
     <Content Include="Views\SinhViens\Delete.cshtml" />
     <Content Include="Views\SinhViens\Details.cshtml" />
     <Content Include="Views\SinhViens\Edit.cshtml" />
     <Content Include="Views\SinhViens\Index.cshtml" />
     <Content Include="Views\CheckAccount\Login.cshtml" />
+    <Content Include="Views\LopHocs\Create.cshtml" />
+    <Content Include="Views\LopHocs\Delete.cshtml" />
+    <Content Include="Views\LopHocs\Details.cshtml" />
+    <Content Include="Views\LopHocs\Edit.cshtml" />
+    <Content Include="Views\LopHocs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -564,11 +564,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106060819028_Create_Table_LopHoc.resx">
-      <DependentUpon>202106060819028_Create_Table_LopHoc.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106110201127_Create_Table_LopHoc.resx">
+      <DependentUpon>202106110201127_Create_Table_LopHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106060819409_Create_Table_SinhVien.resx">
-      <DependentUpon>202106060819409_Create_Table_SinhVien.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106110201574_Create_Table_SinhVien.resx">
+      <DependentUpon>202106110201574_Create_Table_SinhVien.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

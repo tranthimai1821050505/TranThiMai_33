@@ -27,7 +27,7 @@ namespace TranThiMai_33.Controllers
         }
 
         // GET: SinhViens/Details/5
-      //  [Authorize]
+        [Authorize]
         public async Task<ActionResult> Details(string id)
         {
             if (id == null)
@@ -43,7 +43,7 @@ namespace TranThiMai_33.Controllers
         }
 
         // GET: SinhViens/Create
-      //  [Authorize]
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -54,7 +54,7 @@ namespace TranThiMai_33.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-     //   [Authorize]
+        [Authorize]
         public async Task<ActionResult> Create([Bind(Include = "MaSinhVien,HoTen,MaLop")] SinhVien sinhVien)
         {
             if (ModelState.IsValid)
@@ -68,7 +68,7 @@ namespace TranThiMai_33.Controllers
         }
 
         // GET: SinhViens/Edit/5
-    //    [Authorize]
+       [Authorize]
         public async Task<ActionResult> Edit(string id)
         {
             if (id == null)
@@ -88,7 +88,7 @@ namespace TranThiMai_33.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-     //   [Authorize]
+        [Authorize]
         public async Task<ActionResult> Edit([Bind(Include = "MaSinhVien,HoTen,MaLop")] SinhVien sinhVien)
         {
             if (ModelState.IsValid)
@@ -101,7 +101,7 @@ namespace TranThiMai_33.Controllers
         }
 
         // GET: SinhViens/Delete/5
-   //     [Authorize]
+        [Authorize]
         public async Task<ActionResult> Delete(string id)
         {
             if (id == null)
@@ -119,7 +119,7 @@ namespace TranThiMai_33.Controllers
         // POST: SinhViens/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-    //    [Authorize]
+        [Authorize]
         public async Task<ActionResult> DeleteConfirmed(string id)
         {
             SinhVien sinhVien = await db.SinhViens.FindAsync(id);
@@ -130,7 +130,7 @@ namespace TranThiMai_33.Controllers
 
         //upload file excel controller
         [HttpPost]
-    //    [Authorize]
+        [Authorize]
         public ActionResult UploadFile(HttpPostedFileBase file)
         {
             //dat ten cho file
@@ -148,7 +148,7 @@ namespace TranThiMai_33.Controllers
                 SinhVien sv = new SinhVien();
                 sv.MaSinhVien = dt.Rows[i][0].ToString();
                 sv.HoTen = dt.Rows[i][1].ToString();
-               // sv.MaLop = dt.Rows[i][2].ToInt32();
+              //  sv.MaLop = dt.Rows[i][2].ToString();
                 db.SinhViens.Add(sv);
                 db.SaveChanges();
             }
