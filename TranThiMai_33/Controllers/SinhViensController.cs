@@ -134,7 +134,7 @@ namespace TranThiMai_33.Controllers
         public ActionResult UploadFile(HttpPostedFileBase file)
         {
             //dat ten cho file
-            string _FileName = "KhachHang.xlsx";
+            string _FileName = "Book1Thi1.xlsx";
             //duong dan luu file
             string _path = Path.Combine(Server.MapPath("~/Uploads/Excels"), _FileName);
             //luu file len server
@@ -148,7 +148,8 @@ namespace TranThiMai_33.Controllers
                 SinhVien sv = new SinhVien();
                 sv.MaSinhVien = dt.Rows[i][0].ToString();
                 sv.HoTen = dt.Rows[i][1].ToString();
-              //  sv.MaLop = dt.Rows[i][2].ToString();
+                
+                sv.MaLop = (int) dt.Rows[i][2];
                 db.SinhViens.Add(sv);
                 db.SaveChanges();
             }
